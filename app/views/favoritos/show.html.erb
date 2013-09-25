@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @favorito.name %>
+</p>
+
+<p>
+  <b>Nationality:</b>
+  <%= @favorito.nationality %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <%= image_tag @favorito.photo_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_favorito_path(@favorito) %> |
+<%= link_to 'Back', favoritos_path %>

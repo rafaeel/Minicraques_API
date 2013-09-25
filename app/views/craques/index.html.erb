@@ -1,0 +1,25 @@
+<h1>Listing craques</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Nationality</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @craques.each do |craque| %>
+  <tr>
+    <td><%= craque.name %></td>
+    <td><%= craque.nationality %></td>
+    <td><%= link_to 'Show', craque %></td>
+    <td><%= link_to 'Edit', edit_craque_path(craque) %></td>
+    <td><%= link_to 'Destroy', craque, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Craque', new_craque_path %>

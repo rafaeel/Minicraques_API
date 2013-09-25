@@ -1,0 +1,2 @@
+module CraquesHelper
+end

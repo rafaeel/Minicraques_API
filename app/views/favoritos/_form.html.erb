@@ -1,0 +1,29 @@
+<%= form_for(@favorito) do |f| %>
+  <% if @favorito.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@favorito.errors.count, "error") %> prohibited this favorito from being saved:</h2>
+
+      <ul>
+      <% @favorito.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br />
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

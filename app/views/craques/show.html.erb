@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @craque.name %>
+</p>
+
+<p>
+  <b>Nationality:</b>
+  <%= @craque.nationality %>
+</p>
+
+<p>
+     <b>Photo:</b>
+       <%= image_tag @craque.photo.url(:thumb) %>
+</p>
+
+
+<%= link_to 'Edit', edit_craque_path(@craque) %> |
+<%= link_to 'Back', craques_path %>

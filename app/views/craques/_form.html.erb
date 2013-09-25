@@ -1,0 +1,30 @@
+<%= form_for(@craque, :html => { :multipart => true }) do |f| %>
+  <% if @craque.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@craque.errors.count, "error") %> prohibited this craque from being saved:</h2>
+
+      <ul>
+      <% @craque.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br />
+    <%= f.text_field :nationality %> <br>
+  </div>
+  <div class="actions">
+    <% if @craque.photo.present? %>
+      <%= image_tag @craque.photo.url(:thumb) %>
+      <br>
+    <% end %>
+    <%= f.file_field :photo %><br>
+    <%= f.submit %>
+  </div>
+<% end %>
